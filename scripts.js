@@ -151,18 +151,9 @@ const projects = [
   UI: filters + grid rendering
 ---------------------------*/
 const allFilters = ['UI Design', 'UX Research', 'Visual Communication', 'Motion'];
-const state = {
-    selected: new Set()
-};
-function getSelectedFilters() {
-    const storageString = sessionStorage.getItem('selectedFilters')
-    const parsedStorage = storageString ? JSON.parse(storageString) : []
-
-    return new Set(parsedStorage)
-}
+let selectedFilters = [];
 
 function initFilters() {
-    const selectedFilters = getSelectedFilters()
     const uiDesignFilter = document.getElementById('ui-design-filter-btn');
     const uxResearchFilter = document.getElementById('ux-research-filter-btn');
     const visualCommunicationFilter = document.getElementById('visual-communication-filter-btn');
@@ -175,31 +166,25 @@ function initFilters() {
         }
         filterButtons[i].removeEventListener('click', listener)
         filterButtons[i].addEventListener('click', listener)
-        if (selectedFilters.has(allFilters[i])) {
-            filterButtons[i].classList.add('selected')
-        }
     }
 }
 
 function toggleFilter(filter, btn) {
-    const selectedFilters = getSelectedFilters()
-    if (selectedFilters.has(filter)) {
-        selectedFilters.delete(filter);
+    if (selectedFilters.some(f => f === filter)) {
+        selectedFilters = selectedFilters.filter(f => f !== filter);
         btn.classList.remove('selected');
     } else {
-        selectedFilters.add(filter);
+        selectedFilters.push(filter);
         btn.classList.add('selected');
     }
-    sessionStorage.setItem('selectedFilters', JSON.stringify(Array.from(selectedFilters)))
     renderGrid();
 }
 
 function matchesFilters(project) {
-    const selectedFilters = getSelectedFilters()
-    if (selectedFilters.size === 0) return true;
+    if (selectedFilters.length === 0) return true;
     // OR behavior: if project has any of the selected tags
     for (const t of project.tags) {
-        if (selectedFilters.has(t)) return true;
+        if (selectedFilters.some(f => f === t)) return true;
     }
     return false;
 }
@@ -392,14 +377,8 @@ document.addEventListener('DOMContentLoaded', initBanner);
 /* -------------------------
   Init on load
 ---------------------------*/
-window.addEventListener("pageshow", (event) => {
-    if (event.persisted === false && performance.getEntriesByType("navigation")[0].type === "reload") {
-        sessionStorage.clear()
-    }
-    initFilters();
-    renderGrid();
-});
-
 document.addEventListener('DOMContentLoaded', () => {
     initBanner();
+    initFilters();
+    renderGrid();
 });
