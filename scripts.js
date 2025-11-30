@@ -151,7 +151,7 @@ const projects = [
   UI: filters + grid rendering
 ---------------------------*/
 const allFilters = ['UI Design', 'UX Research', 'Visual Communication', 'Motion'];
-let selectedFilters = [];
+const selectedFilters = [];
 
 function initFilters() {
     const uiDesignFilter = document.getElementById('ui-design-filter-btn');
@@ -170,8 +170,9 @@ function initFilters() {
 }
 
 function toggleFilter(filter, btn) {
-    if (selectedFilters.some(f => f === filter)) {
-        selectedFilters = selectedFilters.filter(f => f !== filter);
+    const i = selectedFilters.findIndex(f => f === filter);
+    if (i !== -1) {
+        selectedFilters.splice(i, 1);
         btn.classList.remove('selected');
     } else {
         selectedFilters.push(filter);
@@ -367,12 +368,6 @@ function initBanner() {
         targetY = 50;
     });
 }
-
-// ensure it runs after DOM is ready
-document.addEventListener('DOMContentLoaded', initBanner);
-
-
-
 
 /* -------------------------
   Init on load
