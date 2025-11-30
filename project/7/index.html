@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Moodiest App – Exploration of AI in Mood Tracking</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.png">
+    <link rel="stylesheet" href="/styles.css" />
+</head>
+
+<body>
+    <nav class="top-nav" aria-label="Main navigation">
+        <ul>
+            <li><a href="/#intro">Intro</a></li>
+            <li><a href="/#projects">Projects</a></li>
+            <li><a href="/#about">About</a></li>
+            <li><a href="/#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main class="project-page">
+        <div class="project-left" id="projectLeft" style="--hover-color:#eec97d">
+            <h2 class="client">PERSONAL PROJECT</h2>
+            <h1 class="title">Moodiest App – Exploration of AI in Mood Tracking
+            </h1>
+            <div class="tag-list">
+                <span class="tag">UI Design</span>
+                <span class="tag">Mobile App</span>
+                <span class="tag">Digital Product</span>
+            </div>
+            <div class="section-links">
+                <a href="#mood-overview" class="nav-item">Overview</a>
+                <a href="#mood-problem" class="nav-item active">Product Focus & Goals</a>
+                <a href="#mood-sprint" class="nav-item">Beginning: Design Sprint</a>
+                <a href="#mood-design" class="nav-item">Updated Design</a>
+                <a href="#moody" class="nav-item">Moody & the Mood Scale</a>
+                <a href="#moody-color" class="nav-item">Colour Contrast Testing</a>
+                <a href="#AI" class="nav-item">AI "Moody"</a>
+                <a href="#moody-reflection" class="nav-item">Reflection</a>
+            </div>
+        </div>
+        <div class="project-right" id="projectRight" tabindex="0">
+            <img src="/mood/mood1.png" alt="" />
+            <h2 id="mood-overview">Overview</h2>
+            <p>Moodiest is a mobile app that helps users monitor and manage their emotional wellbeing by logging their
+                daily moods, activities, and thoughts. The app tracks mood trends over time, provides analytics and
+                insights based on user data, as well as helpful tips and feedback through an integrated AI chatbot.
+                <br><br>
+                Moodiest is a project that grew out of a 10-hour design sprint. After receiving initial feedback on a
+                simple Figma prototype based on 6 screens, I decided to develop my idea further while collaborating with
+                a developer.
+            </p>
+            <a class="link-btn" target="_blank"
+                href=https://www.figma.com/proto/c40vSRsAoTwMx8v21Bkd08/Moodiest?node-id=192-6499&t=c66RhyauKVchLtzl-1&scaling=scale-down&content-scaling=fixed&page-id=1%3A1063&starting-point-node-id=196%3A6873>View
+                Figma Prototype →</a>
+            <h2 id="mood-problem">Product Focus & Goals</h2>
+            <p>Before starting the project, I had a few ideas for what a mood-tracking app should offer: a simple,
+                quick-to-use interface and a data overview that provides real value to the user. As the project
+                progressed, these goals became clearer and more defined.</p>
+            <img src="/mood/problem.png" alt="" style="width: 100%;" />
+
+            <h2 id="mood-sprint">Beginning: Design Sprint</h2>
+            <p>
+                An initial 10-hour design sprint resulted in a minimalist interface with a clear user journey and a
+                cohesive style for a simple mood tracking app. The process included researching similar apps, building
+                wireframes and a simple prototype.
+                <br><br>
+                Valuable feedback by the designers Eva-Liisa Edela, Alina Trussova, Kristi Koppel and Agu-Art Annuki
+                highlighted several areas for improvement:
+                <br>
+            <ul>
+                <li>Limited use of established mobile design standards, such as the burger menu</li>
+                <li>Ambiguity in the mood scale for some users</li>
+                <li>No option to add personal notes about the day</li>
+                <li>Lack of info on the insights page, such as dates and a yearly view</li>
+            </ul>
+            <br>
+            I addressed these issues by refining the design, incorporating mobile UI standards, improving clarity in the
+            mood scale, adding note-taking functionality, and enhancing the insights page with more detailed data, among
+            a few other updates. I also started collaborating on the project with a developer, who started building up
+            the app in code.
+            </p>
+            <img src="/mood/wire.png" alt="" />
+            <h2 id="mood-design">Updated Design</h2>
+            <p>
+                In the updated version, I fleshed out the concept more and worked on these updates:
+            <ul>
+                <li>Using a horizontal menu instead of a burger menu</li>
+                <li>Adding descriptive labels to the mood scale</li>
+                <li>Adding a note-taking functionality</li>
+                <li>Adding a streak counter with animations</li>
+                <li>Improvement and refinement of the statistics screens</li>
+                <li>Integrating ​​an AI chatbot</li>
+            </ul>
+            </p>
+
+            <img src="/mood/journey.png" alt="" />
+            <br>
+            <p>The users can use the insights page to check their weekly, monthly and yearly mood stats and see the
+                general trends. The app is also able to show which activities are correlating more with a positive mood,
+                and which ones with a negative one. When clicking on a specific day, the user is able to see their
+                logged mood, activities, and thoughts.</p>
+            <br>
+            <div class="col-3-gallery">
+                <img src="/mood/i1.png" alt="" />
+                <img src="/mood/i2.png" alt="" />
+                <img src="/mood/i3.png" alt="" />
+            </div>
+            <br>
+            <h2 id="moody">Moody & the Mood Scale</h2>
+            <div class="col-2-gallery">
+                <img src="/mood/moody-hi.png" alt="" style="width:80%; height:auto; display:block; margin:24px auto;" />
+                <p>The scale is accompanied by a cute and silly looking blob creature called Moody, which changes colors
+                    and will be either frowning or smiling based on the chosen emotion. This blob also acts as the
+                    mascot for the app and the chatbot AI.</p>
+            </div>
+            <br>
+
+            <p>The mood scale contains 5 points: awful, bad, okay, happy, and great. The negative emotions are
+                represented by colder colors, while the positive emotions are warmer. There is also a text label next to
+                the scale for added clarity. </p>
+
+            <video width="100%" style="border-radius: 14px; overflow: hidden;" autoplay muted loop playsinline>
+                <source src="/mood/mood-select.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+
+
+            <h2 id="moody-color">Colour Contrast Testing</h2>
+            <p>I tested the color contrast through different types of color blindness filters. The chosen colors are
+                easily distinguishable with any type of color blindness.</p>
+            <img src="/mood/1-normal.png" alt="" />
+            <img src="/mood/2-prota.png" alt="" />
+            <img src="/mood/3-mono.png" alt="" />
+            <img src="/mood/4-trita.png" alt="" />
+            <img src="/mood/5-deu.png" alt="" />
+            <img src="/mood/6-trita.png" alt="" />
+
+            <h2 id="AI">AI "Moody"</h2>
+            <div class="col-2-gallery">
+                <img src="/mood/pilt.png" alt="" style="width: 80%;" />
+                <p>Moody is an AI chatbot feature integrated into the app. Users can engage with the chatbot to receive
+                    personalized recommendations, coping strategies, and motivational messages based on their mood
+                    patterns and activities.
+                    <br><br>
+                    Moody also gives the user short daily feedback based on their daily mood and activities. That means
+                    the user receives unique and personalised content every time they successfully log their mood. That
+                    may help to keep the users engaged and the user experience feeling fresh each time.
+                    <br><br>
+                    The prototype, which is built in React Native framework, includes AI Moody powered by ChatGPT. It is
+                    designed to analyze user input and offer mental health advice and motivational messages in a
+                    friendly, supportive tone.
+                </p>
+            </div>
+            <br>
+            <h2 id="moody-reflection">Reflection</h2>
+            <p>What began as a 10-hour design sprint to hone my UI design skills quickly evolved into a full-fledged
+                product design hobby project. I partnered with a developer, and together we’ve been building the app
+                using React Native. This collaborative process has been invaluable for me as a designer, offering
+                insight into the challenges that arise during development and how design choices must account for
+                technical constraints.
+                <br><br>
+                Working closely with the developer, I’ve learned to consider practical aspects such as how layouts
+                adjust when the on-screen keyboard is introduced and the importance of designing often-overlooked
+                screens like sign-up and settings. We also explored integrating ChatGPT to create "AI Moody," an AI
+                assistant with a specific personality designed to help users manage their mental health.
+                Development and testing are ongoing, and this process continues to reveal new considerations for the
+                user journey and data input mechanics. Because the product involves both mental health and AI, it’s also
+                essential to establish strong safeguards to ensure user safety and data protection.
+                <br>
+            </p>
+            <div class="col-2-gallery">
+                <p>I’m excited to keep refining and expanding this project, with plans to conduct user testing on a
+                    broader scale to gather more comprehensive feedback.
+                </p>
+                <img src="/mood/Leaf.gif" alt="" style="width: 35%; display: block; margin: 0 auto;" />
+            </div>
+        </div>
+    </main>
+    <script src="/projectPageScript.js"></script>
+</body>
+
+</html>
